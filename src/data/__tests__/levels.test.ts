@@ -3,6 +3,15 @@ import { getSearchItems } from '../../domain/levelLogic';
 import { builtInLevels } from '../levels';
 
 describe('built-in levels', () => {
+  it('includes the generated AI kitchen level as an offline asset', () => {
+    const level = builtInLevels.find((candidate) => candidate.id === 'ai-kitchen');
+
+    expect(level).toBeDefined();
+    expect(level?.source).toBe('ai');
+    expect(level?.imageSrc).toBe('/assets/levels/ai-kitchen/scene.png');
+    expect(getSearchItems(level!)).toHaveLength(5);
+  });
+
   it('provides at least five search targets per level', () => {
     for (const level of builtInLevels) {
       expect(getSearchItems(level), level.id).toHaveLength(5);

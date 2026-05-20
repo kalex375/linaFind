@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { computed } from 'vue';
 import type { Level, SceneItem } from '../domain/levelLogic';
+import { getThumbnailArea, getThumbnailCropStyle } from '../domain/levelLogic';
 
 const props = defineProps<{
   level: Level;
@@ -8,8 +9,6 @@ const props = defineProps<{
 }>();
 
 const cropStyle = computed(() => {
-  const area = props.item.targetArea;
-
   if (props.item.thumbnailSrc) {
     return {
       backgroundImage: `url(${props.item.thumbnailSrc})`,
@@ -18,11 +17,7 @@ const cropStyle = computed(() => {
     };
   }
 
-  return {
-    backgroundImage: `url(${props.level.imageSrc})`,
-    backgroundSize: `${10000 / area.width}% ${10000 / area.height}%`,
-    backgroundPosition: `${area.x}% ${area.y}%`,
-  };
+  return getThumbnailCropStyle(props.level.imageSrc, getThumbnailArea(props.item));
 });
 </script>
 

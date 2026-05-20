@@ -3,6 +3,8 @@ import {
   buildInitialProgress,
   findItemAtPoint,
   getAudioSource,
+  getThumbnailArea,
+  getThumbnailCropStyle,
   getSearchItems,
   isLevelComplete,
   markItemFound,
@@ -22,6 +24,7 @@ const sampleLevel: Level = {
       label: { pt: 'bola', en: 'ball', uk: "м'яч" },
       showLabelOnImage: true,
       targetArea: { x: 10, y: 20, width: 15, height: 10 },
+      thumbnailArea: { x: 12, y: 22, width: 10, height: 8 },
       thumbnailSrc: '/ball.png',
       audioSrc: { pt: '/audio/bola.mp3' },
     },
@@ -65,5 +68,18 @@ describe('level logic', () => {
       src: '/audio/bola.mp3',
     });
     expect(getAudioSource(sampleLevel.items[0], 'en')).toEqual({ kind: 'speech' });
+  });
+
+  it('uses a separate thumbnail area for cropped side-panel previews', () => {
+    expect(getThumbnailArea(sampleLevel.items[0])).toEqual({ x: 12, y: 22, width: 10, height: 8 });
+    expect(getThumbnailArea(sampleLevel.items[1])).toEqual(sampleLevel.items[1].targetArea);
+  });
+
+  it('converts percentage item coordinates into CSS background crop coordinates', () => {
+    expect(getThumbnailCropStyle('/scene.png', { x: 25, y: 40, width: 10, height: 20 })).toEqual({
+      backgroundImage: 'url(/scene.png)',
+      backgroundSize: '1000% 500%',
+      backgroundPosition: '27.7778% 50%',
+    });
   });
 });

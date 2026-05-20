@@ -19,6 +19,7 @@ export type SceneItem = {
   label: LocalizedText;
   showLabelOnImage: boolean;
   targetArea: TargetArea;
+  thumbnailArea?: TargetArea;
   thumbnailSrc?: string;
   audioSrc?: Partial<Record<LanguageCode, string>>;
 };
@@ -76,4 +77,26 @@ export function getAudioSource(item: SceneItem, language: LanguageCode): AudioSo
 
 export function getLabel(text: LocalizedText, language: LanguageCode): string {
   return text[language] || text.pt;
+}
+
+export function getThumbnailArea(item: SceneItem): TargetArea {
+  return item.thumbnailArea ?? item.targetArea;
+}
+
+export function getThumbnailCropStyle(imageSrc: string, area: TargetArea): Record<string, string> {
+  return {
+    backgroundImage: `url(${imageSrc})`,
+    backgroundSize: `${formatPercent(10000 / area.width)} ${formatPercent(10000 / area.height)}`,
+    backgroundPosition: `${formatPercent(toBackgroundPosition(area.x, area.width))} ${formatPercent(toBackgroundPosition(area.y, area.height))}`,
+  };
+}
+
+function toBackgroundPosition(start: number, size: number): number {
+  const remaining = 100 - size;
+  return remaining <= 0 ? 0 : (start / remaining) * 100;
+}
+
+function formatPercent(value: number): string {
+  const rounded = Number(value.toFixed(4));
+  return `${rounded}%`;
 }
