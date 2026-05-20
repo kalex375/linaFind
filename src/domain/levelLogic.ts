@@ -1,3 +1,5 @@
+import { resolveAssetPath } from './assets';
+
 export type LanguageCode = 'pt' | 'en' | 'uk';
 
 export type LocalizedText = Record<LanguageCode, string>;
@@ -85,7 +87,7 @@ export function getThumbnailArea(item: SceneItem): TargetArea {
 
 export function getThumbnailCropStyle(imageSrc: string, area: TargetArea): Record<string, string> {
   return {
-    backgroundImage: `url(${imageSrc})`,
+    backgroundImage: `url(${resolveAssetPath(imageSrc)})`,
     backgroundSize: `${formatPercent(10000 / area.width)} ${formatPercent(10000 / area.height)}`,
     backgroundPosition: `${formatPercent(toBackgroundPosition(area.x, area.width))} ${formatPercent(toBackgroundPosition(area.y, area.height))}`,
   };

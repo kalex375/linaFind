@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { useRouter } from 'vue-router';
 import LanguageSwitcher from '../components/LanguageSwitcher.vue';
+import { resolveAssetPath } from '../domain/assets';
 import { getLabel } from '../domain/levelLogic';
 import { useGameStore } from '../stores/gameStore';
 
@@ -24,7 +25,7 @@ function openLevel(levelId: string): void {
 
     <section class="level-grid" aria-label="Levels">
       <button v-for="level in game.levels" :key="level.id" type="button" class="level-card" @click="openLevel(level.id)">
-        <img :src="level.thumbnailSrc" :alt="getLabel(level.title, game.language)" />
+        <img :src="resolveAssetPath(level.thumbnailSrc)" :alt="getLabel(level.title, game.language)" />
         <span>{{ getLabel(level.title, game.language) }}</span>
       </button>
     </section>

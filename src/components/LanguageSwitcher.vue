@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { resolveAssetPath } from '../domain/assets';
 import type { LanguageCode } from '../domain/levelLogic';
 
 defineProps<{
@@ -28,7 +29,7 @@ const languages: Array<{ code: LanguageCode; label: string; flagSrc: string }> =
       :title="option.label"
       @click="emit('change', option.code)"
     >
-      <img class="language-flag" :src="option.flagSrc" alt="" aria-hidden="true" />
+      <img class="language-flag" :src="resolveAssetPath(option.flagSrc)" alt="" aria-hidden="true" />
     </button>
   </div>
 </template>

@@ -2,7 +2,10 @@ import { defineConfig } from 'vitest/config';
 import vue from '@vitejs/plugin-vue';
 import { VitePWA } from 'vite-plugin-pwa';
 
+const base = process.env.GITHUB_PAGES === 'true' ? '/linaFind/' : '/';
+
 export default defineConfig({
+  base,
   test: {
     environment: 'happy-dom',
   },
@@ -19,10 +22,10 @@ export default defineConfig({
         background_color: '#fff8df',
         display: 'standalone',
         orientation: 'landscape',
-        start_url: '/',
+        start_url: base,
         icons: [
           {
-            src: '/pwa-icon.svg',
+            src: `${base}pwa-icon.svg`,
             sizes: '512x512',
             type: 'image/svg+xml',
             purpose: 'any maskable',
@@ -32,7 +35,7 @@ export default defineConfig({
       workbox: {
         globPatterns: ['**/*.{js,css,html,svg,png,jpg,jpeg,mp3,ogg,woff2}'],
         maximumFileSizeToCacheInBytes: 5 * 1024 * 1024,
-        navigateFallback: '/index.html',
+        navigateFallback: `${base}index.html`,
       },
     }),
   ],

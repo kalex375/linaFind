@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { resolveAssetPath } from '../domain/assets';
 import type { LanguageCode, Level, SceneItem } from '../domain/levelLogic';
 import { getLabel } from '../domain/levelLogic';
 
@@ -47,7 +48,7 @@ declare global {
 <template>
   <div class="scene-frame">
     <div class="scene-stage" :ref="(el) => { if (el) (el as HTMLElement).__levelItems = level.items; }" @pointerup="handlePointer">
-      <img class="scene-image" :src="level.imageSrc" :alt="getLabel(level.title, language)" draggable="false" />
+      <img class="scene-image" :src="resolveAssetPath(level.imageSrc)" :alt="getLabel(level.title, language)" draggable="false" />
       <div
         v-for="item in showDebugAreas ? level.items : []"
         :key="`debug-${item.id}`"

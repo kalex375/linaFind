@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { computed } from 'vue';
+import { resolveAssetPath } from '../domain/assets';
 import type { Level, SceneItem } from '../domain/levelLogic';
 import { getThumbnailArea, getThumbnailCropStyle } from '../domain/levelLogic';
 
@@ -19,6 +20,6 @@ const cropStyle = computed(() => {
 
 <template>
   <div class="item-thumbnail" :style="cropStyle" aria-hidden="true">
-    <img v-if="item.thumbnailSrc" class="object-thumbnail" :src="item.thumbnailSrc" alt="" draggable="false" />
+    <img v-if="item.thumbnailSrc" class="object-thumbnail" :src="resolveAssetPath(item.thumbnailSrc)" alt="" draggable="false" />
   </div>
 </template>

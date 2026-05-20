@@ -4,7 +4,7 @@ import GameView from '../views/GameView.vue';
 import AdminLevelEditor from '../views/AdminLevelEditor.vue';
 
 export const router = createRouter({
-  history: createWebHistory(),
+  history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     { path: '/', name: 'home', component: HomeView },
     { path: '/level/:id', name: 'level', component: GameView },
