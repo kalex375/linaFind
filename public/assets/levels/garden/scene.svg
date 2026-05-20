@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000">
+  <rect width="1600" height="1000" fill="#9fd3ff"/><rect y="600" width="1600" height="400" fill="#96e072"/>
+  <g><circle cx="205" cy="150" r="90" fill="#ffe36e" stroke="#222" stroke-width="8"/><text x="165" y="285" font-size="42">sol</text></g>
+  <g><line x1="380" y1="735" x2="380" y2="595" stroke="#2f7d32" stroke-width="12"/><circle cx="380" cy="560" r="55" fill="#ff6b9a" stroke="#222" stroke-width="8"/><text x="330" y="825" font-size="42">flor</text></g>
+  <g><ellipse cx="830" cy="250" rx="70" ry="45" fill="#ffd166" stroke="#222" stroke-width="8"/><ellipse cx="910" cy="250" rx="70" ry="45" fill="#ef476f" stroke="#222" stroke-width="8"/><text x="780" y="360" font-size="42">borboleta</text></g>
+  <g><rect x="1080" y="680" width="150" height="120" rx="24" fill="#f4a261" stroke="#222" stroke-width="8"/><path d="M1100 680q55-80 110 0" fill="none" stroke="#222" stroke-width="10"/><text x="1095" y="865" font-size="42">balde</text></g>
+  <g><rect x="1320" y="360" width="80" height="330" fill="#8b5a2b"/><circle cx="1360" cy="310" r="150" fill="#2f9e44" stroke="#222" stroke-width="8"/><text x="1285" y="760" font-size="42">árvore</text></g>
+</svg>

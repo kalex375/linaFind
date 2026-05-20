@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000">
+  <rect width="1600" height="1000" fill="#d8dee8"/><rect y="650" width="1600" height="350" fill="#f7c948"/>
+  <rect x="690" y="120" width="220" height="260" fill="#183a78"/><path d="M810 150a90 90 0 1 0 0 180 110 110 0 1 1 0-180" fill="#ffe36e"/>
+  <rect x="260" y="640" width="180" height="120" rx="14" fill="#fff" stroke="#222" stroke-width="8"/><text x="280" y="735" font-size="44">livro</text>
+  <circle cx="650" cy="760" r="76" fill="#fff" stroke="#222" stroke-width="8"/><circle cx="620" cy="735" r="18" fill="#d4515c"/><circle cx="685" cy="780" r="22" fill="#8fcf73"/><text x="590" y="880" font-size="48">bola</text>
+  <rect x="1080" y="570" width="220" height="90" fill="#735d9a"/><rect x="1120" y="430" width="170" height="140" fill="#fff176"/><text x="1115" y="705" font-size="44">cama</text>
+  <g><rect x="1110" y="665" width="55" height="55" fill="#9fd3ff" stroke="#222" stroke-width="6"/><rect x="1175" y="675" width="50" height="50" fill="#f4a261" stroke="#222" stroke-width="6"/><rect x="1235" y="655" width="55" height="55" fill="#bde07b" stroke="#222" stroke-width="6"/><text x="1120" y="815" font-size="48">cubos</text></g>
+  <g><circle cx="1400" cy="790" r="58" fill="#fff" stroke="#222" stroke-width="8"/><line x1="1400" y1="790" x2="1400" y2="752" stroke="#222" stroke-width="8"/><line x1="1400" y1="790" x2="1430" y2="810" stroke="#222" stroke-width="8"/><text x="1315" y="900" font-size="42">despertador</text></g>
+  <circle cx="1290" cy="95" r="70" fill="#ffe36e" stroke="#222" stroke-width="8"/><text x="1230" y="210" font-size="42">candeeiro</text>
+</svg>

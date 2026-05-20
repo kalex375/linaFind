@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000">
+  <rect width="1600" height="1000" fill="#cdefff"/><rect y="700" width="1600" height="300" fill="#b6e3d4"/>
+  <ellipse cx="910" cy="670" rx="340" ry="150" fill="#fff" stroke="#222" stroke-width="10"/><rect x="650" y="500" width="520" height="180" fill="#fff"/>
+  <g><path d="M920 650c50-50 140 0 100 65-42 40-120 40-170 0 0-35 25-58 70-65z" fill="#ffd84a" stroke="#222" stroke-width="8"/><circle cx="995" cy="665" r="8"/><text x="920" y="790" font-size="42">pato</text></g>
+  <g><rect x="465" y="560" width="120" height="55" rx="25" fill="#f8a5c2" stroke="#222" stroke-width="8"/><text x="450" y="690" font-size="42">sabão</text></g>
+  <g><rect x="1185" y="210" width="165" height="260" rx="20" fill="#f4a261" stroke="#222" stroke-width="8"/><text x="1185" y="535" font-size="42">toalha</text></g>
+  <g><rect x="290" y="345" width="42" height="205" rx="18" fill="#89d4ff" stroke="#222" stroke-width="8"/><text x="248" y="620" font-size="42">escova</text></g>
+  <g><ellipse cx="780" cy="235" rx="160" ry="120" fill="#e9fbff" stroke="#222" stroke-width="8"/><text x="700" y="395" font-size="42">espelho</text></g>
+</svg>
