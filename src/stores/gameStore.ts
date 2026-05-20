@@ -1,5 +1,6 @@
 import { defineStore } from 'pinia';
 import { computed, ref } from 'vue';
+import { builtInCollections, findCollectionById, findCollectionForLevel, getLevelsInCollection } from '../data/collections';
 import { builtInLevels, findLevelById } from '../data/levels';
 import {
   buildInitialProgress,
@@ -24,8 +25,19 @@ const savedLanguage = window.localStorage.getItem(languageStorageKey) as Languag
   const lastTouchedItem = ref<SceneItem | undefined>();
 
   const levels = computed(() => builtInLevels);
+  const collections = computed(() => builtInCollections);
+  const currentCollection = computed(() => (currentLevel.value ? findCollectionForLevel(currentLevel.value.id) : undefined));
   const searchItems = computed(() => (currentLevel.value ? getSearchItems(currentLevel.value) : []));
   const complete = computed(() => (currentLevel.value ? isLevelComplete(currentLevel.value, progress.value) : false));
+
+  function findCollection(collectionId: string) {
+    return findCollectionById(collectionId);
+  }
+
+  function levelsForCollection(collectionId: string): Level[] {
+    const collection = findCollectionById(collectionId);
+    return collection ? getLevelsInCollection(collection) : [];
+  }
 
   function setLanguage(nextLanguage: LanguageCode): void {
     language.value = nextLanguage;
@@ -58,13 +70,17 @@ const savedLanguage = window.localStorage.getItem(languageStorageKey) as Languag
   }
 
   return {
+    collections,
     complete,
+    currentCollection,
     currentLevel,
     language,
     lastTouchedItem,
     levels,
     progress,
     searchItems,
+    findCollection,
+    levelsForCollection,
     openLevel,
     setLanguage,
     touchItem,
