@@ -14,6 +14,7 @@ const route = useRoute();
 const router = useRouter();
 const game = useGameStore();
 const completeBannerDismissed = ref(false);
+const showLabels = ref(false);
 
 watch(
   () => String(route.params.id ?? ''),
@@ -27,6 +28,7 @@ watch(
 );
 
 const title = computed(() => (game.currentLevel ? getLabel(game.currentLevel.title, game.language) : ''));
+const showDebugAreas = computed(() => route.query.debug === 'areas');
 
 async function handleItem(item: SceneItem): Promise<void> {
   game.touchItem(item);
@@ -43,7 +45,24 @@ async function handleItem(item: SceneItem): Promise<void> {
         </svg>
       </button>
       <h1>{{ title }}</h1>
-      <LanguageSwitcher :language="game.language" @change="game.setLanguage" />
+      <div class="toolbar-actions">
+        <button
+          type="button"
+          class="icon-button label-toggle"
+          :class="{ active: showLabels }"
+          :aria-pressed="showLabels"
+          :aria-label="showLabels ? 'Hide labels' : 'Show labels'"
+          :title="showLabels ? 'Hide labels' : 'Show labels'"
+          @click="showLabels = !showLabels"
+        >
+          <svg aria-hidden="true" viewBox="0 0 24 24">
+            <path d="M4 6h16" />
+            <path d="M4 12h10" />
+            <path d="M4 18h7" />
+          </svg>
+        </button>
+        <LanguageSwitcher :language="game.language" @change="game.setLanguage" />
+      </div>
     </header>
 
     <section class="game-layout">
@@ -51,6 +70,8 @@ async function handleItem(item: SceneItem): Promise<void> {
         :level="game.currentLevel"
         :language="game.language"
         :last-touched-item="game.lastTouchedItem"
+        :show-debug-areas="showDebugAreas"
+        :show-labels="showLabels"
         @item="handleItem"
       />
       <div class="game-side">

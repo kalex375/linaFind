@@ -6,6 +6,8 @@ defineProps<{
   level: Level;
   language: LanguageCode;
   lastTouchedItem?: SceneItem;
+  showDebugAreas?: boolean;
+  showLabels?: boolean;
 }>();
 
 const emit = defineEmits<{
@@ -46,8 +48,23 @@ declare global {
   <div class="scene-frame">
     <div class="scene-stage" :ref="(el) => { if (el) (el as HTMLElement).__levelItems = level.items; }" @pointerup="handlePointer">
       <img class="scene-image" :src="level.imageSrc" :alt="getLabel(level.title, language)" draggable="false" />
+      <div
+        v-for="item in showDebugAreas ? level.items : []"
+        :key="`debug-${item.id}`"
+        class="debug-target-area"
+        :class="item.role"
+        :style="{
+          left: `${item.targetArea.x}%`,
+          top: `${item.targetArea.y}%`,
+          width: `${item.targetArea.width}%`,
+          height: `${item.targetArea.height}%`,
+        }"
+        aria-hidden="true"
+      >
+        {{ item.id }}
+      </div>
       <button
-        v-for="item in level.items.filter((entry) => entry.showLabelOnImage)"
+        v-for="item in showLabels === false ? [] : level.items.filter((entry) => entry.showLabelOnImage)"
         :key="item.id"
         type="button"
         class="scene-label"

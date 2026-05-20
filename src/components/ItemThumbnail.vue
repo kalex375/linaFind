@@ -10,11 +10,7 @@ const props = defineProps<{
 
 const cropStyle = computed(() => {
   if (props.item.thumbnailSrc) {
-    return {
-      backgroundImage: `url(${props.item.thumbnailSrc})`,
-      backgroundSize: 'cover',
-      backgroundPosition: 'center',
-    };
+    return {};
   }
 
   return getThumbnailCropStyle(props.level.imageSrc, getThumbnailArea(props.item));
@@ -22,5 +18,7 @@ const cropStyle = computed(() => {
 </script>
 
 <template>
-  <div class="item-thumbnail" :style="cropStyle" aria-hidden="true" />
+  <div class="item-thumbnail" :style="cropStyle" aria-hidden="true">
+    <img v-if="item.thumbnailSrc" class="object-thumbnail" :src="item.thumbnailSrc" alt="" draggable="false" />
+  </div>
 </template>
