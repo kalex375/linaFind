@@ -35,6 +35,13 @@ export type Level = {
   items: SceneItem[];
 };
 
+export type Collection = {
+  id: string;
+  title: LocalizedText;
+  thumbnailSrc: string;
+  levelIds: string[];
+};
+
 export type FoundProgress = Record<string, boolean>;
 
 export type AudioSource =
