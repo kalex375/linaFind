@@ -18,6 +18,7 @@ defineProps<{
       <div v-for="item in items" :key="item.id" class="search-item" :class="{ found: found[item.id] }">
         <ItemThumbnail :level="level" :item="item" />
         <span>{{ getLabel(item.label, language) }}</span>
+        <span class="found-mark" aria-hidden="true">✓</span>
       </div>
     </div>
   </aside>

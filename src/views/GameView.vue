@@ -30,6 +30,7 @@ watch(
 const title = computed(() => (game.currentLevel ? getLabel(game.currentLevel.title, game.language) : ''));
 const showDebugAreas = computed(() => route.query.debug === 'areas');
 const backTarget = computed(() => (game.currentCollection ? `/collection/${game.currentCollection.id}` : '/'));
+const foundCount = computed(() => game.searchItems.filter((item) => game.progress[item.id]).length);
 
 async function handleItem(item: SceneItem): Promise<void> {
   game.touchItem(item);
@@ -38,7 +39,7 @@ async function handleItem(item: SceneItem): Promise<void> {
 </script>
 
 <template>
-  <main v-if="game.currentLevel" class="game-screen">
+  <main v-if="game.currentLevel" class="game-screen" :class="{ complete: game.complete }">
     <header class="game-toolbar">
       <button type="button" class="back-button" aria-label="Back" @click="router.push(backTarget)">
         <svg aria-hidden="true" viewBox="0 0 24 24">
@@ -46,6 +47,10 @@ async function handleItem(item: SceneItem): Promise<void> {
         </svg>
       </button>
       <h1>{{ title }}</h1>
+      <div class="progress-badge" aria-live="polite">
+        <span>{{ foundCount }}</span>
+        <small>/ {{ game.searchItems.length }}</small>
+      </div>
       <div class="toolbar-actions">
         <button
           type="button"
@@ -67,14 +72,16 @@ async function handleItem(item: SceneItem): Promise<void> {
     </header>
 
     <section class="game-layout">
-      <SceneCanvas
-        :level="game.currentLevel"
-        :language="game.language"
-        :last-touched-item="game.lastTouchedItem"
-        :show-debug-areas="showDebugAreas"
-        :show-labels="showLabels"
-        @item="handleItem"
-      />
+      <div class="scene-shell">
+        <SceneCanvas
+          :level="game.currentLevel"
+          :language="game.language"
+          :last-touched-item="game.lastTouchedItem"
+          :show-debug-areas="showDebugAreas"
+          :show-labels="showLabels"
+          @item="handleItem"
+        />
+      </div>
       <div class="game-side">
         <SearchPanel
           :level="game.currentLevel"
