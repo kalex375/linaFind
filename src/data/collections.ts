@@ -8,6 +8,12 @@ export const builtInCollections: Collection[] = [
     thumbnailSrc: '/assets/levels/ai-kitchen/scene.png',
     levelIds: ['ai-kitchen', 'ai-bedroom', 'ai-bathroom', 'ai-garden', 'ai-playroom'],
   },
+  {
+    id: 'paper-adventure',
+    title: { pt: 'Aventura de papel', en: 'Paper adventure', uk: 'Paper adventure' },
+    thumbnailSrc: '/assets/levels/paper-market/scene.png',
+    levelIds: ['paper-market', 'paper-space', 'paper-seaside', 'paper-forest', 'paper-classroom'],
+  },
 ];
 
 export function findCollectionById(id: string): Collection | undefined {

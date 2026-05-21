@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" role="img" aria-label="Cut paper seaside">
+  <rect width="1600" height="1000" fill="#89d8ff"/>
+  <circle cx="1320" cy="130" r="78" fill="#ffd166"/>
+  <path d="M0 462c260-58 444-26 646 12 242 45 505 29 954-64v590H0Z" fill="#2fb8d8"/>
+  <path d="M0 570c236-52 430-32 658 14 250 51 514 23 942-62v478H0Z" fill="#1787b5"/>
+  <path d="M0 698c250 33 458 17 706-44 310-76 588-62 894 28v318H0Z" fill="#f5ca73"/>
+  <path d="M0 762c358-42 620-25 872 34 263 61 472 66 728 11v193H0Z" fill="#e9b45e"/>
+  <g id="bucket">
+    <path d="M214 708h160l-28 188H242Z" fill="#ff6b6b"/>
+    <ellipse cx="294" cy="708" rx="86" ry="24" fill="#ff8c8c"/>
+    <path d="M226 700c20-78 115-78 137 2" fill="none" stroke="#17324d" stroke-width="10" stroke-linecap="round"/>
+  </g>
+  <g id="shell">
+    <path d="M520 820c34-76 126-76 160 0 8 24-28 62-80 62s-88-38-80-62Z" fill="#ffe8d6"/>
+    <path d="M600 752v130M558 772l42 110M642 772l-42 110" stroke="#e5989b" stroke-width="9" stroke-linecap="round"/>
+  </g>
+  <g id="boat">
+    <path d="M820 444h300c-24 82-72 124-170 124-72 0-112-36-130-124Z" fill="#ef476f"/>
+    <path d="M970 248v192" stroke="#17324d" stroke-width="12" stroke-linecap="round"/>
+    <path d="M982 270l154 142H982Z" fill="#fff6b7"/>
+    <path d="M956 290L820 432h136Z" fill="#4cc9f0"/>
+  </g>
+  <g id="crab">
+    <ellipse cx="1192" cy="790" rx="82" ry="52" fill="#f94144"/>
+    <circle cx="1152" cy="730" r="12" fill="#17324d"/><circle cx="1232" cy="730" r="12" fill="#17324d"/>
+    <path d="M1125 772l-70-44M1260 772l70-44M1130 824l-78 32M1255 824l78 32" stroke="#f94144" stroke-width="18" stroke-linecap="round"/>
+    <path d="M1062 718l-44-34M1320 718l46-34" stroke="#17324d" stroke-width="8" stroke-linecap="round"/>
+  </g>
+  <g id="umbrella">
+    <path d="M126 468c118-118 254-118 372 0Z" fill="#ffd166"/>
+    <path d="M126 468c54-48 100-74 153-86v86ZM279 382c53 12 100 38 153 86H279Z" fill="#06d6a0"/>
+    <path d="M312 468v292" stroke="#17324d" stroke-width="12" stroke-linecap="round"/>
+    <path d="M312 760c0 48 76 48 76 0" fill="none" stroke="#17324d" stroke-width="12" stroke-linecap="round"/>
+  </g>
+  <g id="starfish">
+    <path d="M808 786l34 72 80 9-58 55 15 78-71-38-70 38 14-78-58-55 80-9Z" fill="#ff9f1c"/>
+  </g>
+  <g id="palm">
+    <path d="M1420 732c-36-148-24-286 42-414" stroke="#a05a2c" stroke-width="42" stroke-linecap="round"/>
+    <path d="M1454 318c-156-44-214 44-252 120 128-28 202-12 252-120Z" fill="#48b773"/>
+    <path d="M1460 316c12-148 122-198 218-206-70 94-106 166-218 206Z" fill="#48b773"/>
+    <path d="M1464 324c146-62 230 8 292 82-132-8-204 20-292-82Z" fill="#48b773"/>
+  </g>
+</svg>

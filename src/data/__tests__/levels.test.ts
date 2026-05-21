@@ -3,13 +3,18 @@ import { getSearchItems } from '../../domain/levelLogic';
 import { builtInLevels } from '../levels';
 
 describe('built-in levels', () => {
-  it('shows only generated AI levels on the level picker', () => {
+  it('keeps built-in levels in display order', () => {
     expect(builtInLevels.map((level) => level.id)).toEqual([
       'ai-kitchen',
       'ai-bedroom',
       'ai-bathroom',
       'ai-garden',
       'ai-playroom',
+      'paper-market',
+      'paper-space',
+      'paper-seaside',
+      'paper-forest',
+      'paper-classroom',
     ]);
   });
 

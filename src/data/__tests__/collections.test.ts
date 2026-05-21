@@ -16,6 +16,19 @@ describe('built-in collections', () => {
     ]);
   });
 
+  it('groups the paper-adventure levels in display order', () => {
+    const collection = findCollectionById('paper-adventure');
+
+    expect(collection).toBeDefined();
+    expect(collection?.levelIds).toEqual([
+      'paper-market',
+      'paper-space',
+      'paper-seaside',
+      'paper-forest',
+      'paper-classroom',
+    ]);
+  });
+
   it('uses Ukrainian as the third language for every collection title', () => {
     for (const collection of builtInCollections) {
       expect(Object.keys(collection.title)).toEqual(['pt', 'en', 'uk']);
@@ -47,6 +60,7 @@ describe('built-in collections', () => {
 
   it('finds the collection a level belongs to', () => {
     expect(findCollectionForLevel('ai-garden')?.id).toBe('sunny-house');
+    expect(findCollectionForLevel('paper-space')?.id).toBe('paper-adventure');
     expect(findCollectionForLevel('does-not-exist')).toBeUndefined();
   });
 });

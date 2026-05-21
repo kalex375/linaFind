@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" role="img" aria-label="Cut paper street market">
+  <rect width="1600" height="1000" fill="#f9e7a9"/>
+  <path d="M0 0h1600v210c-240 42-482 36-725 12C572 192 298 166 0 236Z" fill="#9ed8ff"/>
+  <circle cx="1340" cy="122" r="72" fill="#ffcf4d"/>
+  <rect y="706" width="1600" height="294" fill="#eab66f"/>
+  <path d="M0 724c190-48 343-56 510-16 180 43 319 33 490-20 209-64 395-43 600 18v294H0Z" fill="#d89855"/>
+  <g opacity=".22" fill="#7b4b2d">
+    <ellipse cx="200" cy="842" rx="58" ry="16"/>
+    <ellipse cx="572" cy="890" rx="70" ry="18"/>
+    <ellipse cx="1118" cy="826" rx="62" ry="15"/>
+    <ellipse cx="1390" cy="914" rx="84" ry="22"/>
+  </g>
+  <rect x="150" y="320" width="470" height="390" rx="18" fill="#9b5b36"/>
+  <rect x="112" y="266" width="546" height="84" rx="10" fill="#ff6b6b"/>
+  <path d="M112 350h546l-50 76H162Z" fill="#ffd166"/>
+  <rect x="184" y="430" width="376" height="54" fill="#f6c177"/>
+  <rect x="184" y="552" width="376" height="54" fill="#f6c177"/>
+  <rect x="205" y="484" width="330" height="190" fill="#6f3f26"/>
+  <g id="apple-basket">
+    <ellipse cx="274" cy="521" rx="74" ry="30" fill="#a35d2c"/>
+    <rect x="201" y="502" width="146" height="68" rx="18" fill="#c9823f"/>
+    <circle cx="230" cy="500" r="20" fill="#e63946"/>
+    <circle cx="268" cy="492" r="22" fill="#f94144"/>
+    <circle cx="307" cy="503" r="19" fill="#d62828"/>
+    <path d="M258 472c13-27 30-31 49-27" fill="none" stroke="#2a9d8f" stroke-width="9" stroke-linecap="round"/>
+  </g>
+  <g id="bread">
+    <ellipse cx="461" cy="512" rx="75" ry="38" fill="#d9822b"/>
+    <ellipse cx="413" cy="510" rx="38" ry="30" fill="#f2b35d"/>
+    <ellipse cx="470" cy="496" rx="42" ry="32" fill="#e99c3b"/>
+    <ellipse cx="511" cy="518" rx="30" ry="27" fill="#f4bf69"/>
+  </g>
+  <g id="pumpkin">
+    <ellipse cx="318" cy="630" rx="86" ry="58" fill="#f77f00"/>
+    <ellipse cx="282" cy="630" rx="36" ry="56" fill="#fcbf49"/>
+    <ellipse cx="352" cy="630" rx="36" ry="56" fill="#e85d04"/>
+    <path d="M315 565c11-23 29-30 54-21" fill="none" stroke="#5c7c34" stroke-width="12" stroke-linecap="round"/>
+  </g>
+  <g id="flower-pot">
+    <path d="M469 620h94l-16 82h-62Z" fill="#c65d36"/>
+    <circle cx="514" cy="602" r="20" fill="#ffd166"/>
+    <circle cx="488" cy="588" r="20" fill="#ef476f"/>
+    <circle cx="540" cy="586" r="22" fill="#06d6a0"/>
+    <path d="M515 625V566M489 621l-24-42M539 622l26-46" stroke="#27765a" stroke-width="9" stroke-linecap="round"/>
+  </g>
+  <rect x="880" y="324" width="430" height="370" rx="18" fill="#6c9a4b"/>
+  <rect x="844" y="266" width="504" height="82" rx="10" fill="#4ecdc4"/>
+  <path d="M844 348h504l-47 78H892Z" fill="#fff275"/>
+  <rect x="930" y="438" width="320" height="56" fill="#d5a05a"/>
+  <rect x="930" y="560" width="320" height="56" fill="#d5a05a"/>
+  <g id="fish">
+    <ellipse cx="1010" cy="520" rx="70" ry="34" fill="#118ab2"/>
+    <path d="M1076 520l58-42v84Z" fill="#073b4c"/>
+    <circle cx="970" cy="510" r="7" fill="#fff"/>
+    <path d="M1000 542c35-22 64-22 96 0" fill="none" stroke="#7bdff2" stroke-width="8" stroke-linecap="round"/>
+  </g>
+  <g id="cheese">
+    <path d="M1162 496l100 28v70h-100Z" fill="#ffd23f"/>
+    <circle cx="1200" cy="535" r="10" fill="#f4a261"/>
+    <circle cx="1240" cy="560" r="13" fill="#f4a261"/>
+    <circle cx="1181" cy="580" r="8" fill="#f4a261"/>
+  </g>
+  <g id="kite">
+    <path d="M1092 674l58-58 66 60-62 64Z" fill="#ef476f"/>
+    <path d="M1150 616l4 124" stroke="#17324d" stroke-width="7"/>
+    <path d="M1092 674l124 2" stroke="#17324d" stroke-width="7"/>
+    <path d="M1154 740c18 31 45 41 76 31" fill="none" stroke="#17324d" stroke-width="6" stroke-dasharray="14 14"/>
+  </g>
+  <g id="cat">
+    <ellipse cx="1370" cy="686" rx="72" ry="46" fill="#f4a261"/>
+    <circle cx="1326" cy="645" r="39" fill="#f4a261"/>
+    <path d="M1296 617l18-48 28 42M1342 612l36-34 2 56" fill="#e76f51"/>
+    <circle cx="1315" cy="642" r="6" fill="#17324d"/>
+    <circle cx="1338" cy="642" r="6" fill="#17324d"/>
+    <path d="M1324 657c13 10 25 10 38 0M1432 682c48-26 72-7 73 29" fill="none" stroke="#17324d" stroke-width="8" stroke-linecap="round"/>
+  </g>
+</svg>

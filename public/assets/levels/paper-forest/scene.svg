@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" role="img" aria-label="Cut paper forest camp">
+  <rect width="1600" height="1000" fill="#bde0fe"/>
+  <path d="M0 456c120-96 222-132 324-110 100 21 168 92 278 80 141-16 212-152 386-112 118 28 160 120 278 112 126-8 182-82 334-52v626H0Z" fill="#7dcf83"/>
+  <path d="M0 620c330-96 600-72 802-20 284 73 522 43 798-44v444H0Z" fill="#5fb36b"/>
+  <path d="M0 766c268-35 524-16 746 42 278 72 542 48 854-24v216H0Z" fill="#3f8f5a"/>
+  <g id="tent">
+    <path d="M582 760l214-342 228 342Z" fill="#ffb703"/>
+    <path d="M796 418v342H582Z" fill="#fb8500"/>
+    <path d="M796 520l78 240H730Z" fill="#6d4c41"/>
+  </g>
+  <g id="campfire">
+    <path d="M1030 830c32-78 76-92 84-184 54 58 76 113 56 184Z" fill="#ff6b35"/>
+    <path d="M1072 832c16-48 44-70 40-126 42 40 52 80 34 126Z" fill="#ffd166"/>
+    <path d="M974 872l260-70M990 800l226 92" stroke="#6d4c41" stroke-width="20" stroke-linecap="round"/>
+  </g>
+  <g id="owl">
+    <ellipse cx="340" cy="404" rx="70" ry="92" fill="#9c6644"/>
+    <circle cx="314" cy="382" r="34" fill="#fff3b0"/><circle cx="366" cy="382" r="34" fill="#fff3b0"/>
+    <circle cx="314" cy="386" r="12" fill="#17324d"/><circle cx="366" cy="386" r="12" fill="#17324d"/>
+    <path d="M340 410l-20 34h40Z" fill="#ffd166"/>
+    <path d="M278 330l35 24M402 330l-35 24" stroke="#9c6644" stroke-width="28" stroke-linecap="round"/>
+  </g>
+  <g id="mushroom">
+    <path d="M214 792h86l-18 104h-50Z" fill="#fff3b0"/>
+    <path d="M172 790c18-94 152-94 170 0Z" fill="#e63946"/>
+    <circle cx="220" cy="752" r="16" fill="#fff"/><circle cx="282" cy="746" r="18" fill="#fff"/><circle cx="256" cy="782" r="13" fill="#fff"/>
+  </g>
+  <g id="backpack">
+    <rect x="1266" y="668" width="140" height="198" rx="34" fill="#4cc9f0"/>
+    <rect x="1298" y="616" width="76" height="82" rx="26" fill="#4cc9f0"/>
+    <rect x="1292" y="768" width="88" height="70" rx="18" fill="#ffd166"/>
+    <path d="M1266 740c-80 20-80 116 0 138M1406 740c80 20 80 116 0 138" fill="none" stroke="#17324d" stroke-width="12" stroke-linecap="round"/>
+  </g>
+  <g id="lantern">
+    <rect x="462" y="680" width="96" height="154" rx="32" fill="#ffe066"/>
+    <rect x="438" y="812" width="144" height="42" rx="18" fill="#6d4c41"/>
+    <path d="M464 680c4-84 88-84 92 0" fill="none" stroke="#17324d" stroke-width="12" stroke-linecap="round"/>
+    <path d="M484 720h52v88h-52Z" fill="#fff3b0"/>
+  </g>
+  <g id="tree">
+    <rect x="64" y="370" width="82" height="428" rx="35" fill="#7f4f24"/>
+    <circle cx="104" cy="270" r="128" fill="#2d9d54"/>
+    <circle cx="204" cy="354" r="104" fill="#38b764"/>
+    <circle cx="42" cy="392" r="116" fill="#2f9e44"/>
+  </g>
+  <g id="log">
+    <rect x="732" y="858" width="220" height="62" rx="31" fill="#9c6644"/>
+    <circle cx="738" cy="889" r="31" fill="#d4a373"/>
+    <circle cx="738" cy="889" r="16" fill="none" stroke="#7f4f24" stroke-width="7"/>
+  </g>
+</svg>
