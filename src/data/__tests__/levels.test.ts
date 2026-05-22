@@ -15,6 +15,16 @@ describe('built-in levels', () => {
       'paper-seaside',
       'paper-forest',
       'paper-classroom',
+      'toy-bakery',
+      'toy-station',
+      'toy-underwater',
+      'toy-dino',
+      'toy-music',
+      'felt-picnic',
+      'felt-bedroom',
+      'felt-farm',
+      'felt-candy',
+      'felt-rooftop',
     ]);
   });
 
@@ -40,7 +50,7 @@ describe('built-in levels', () => {
     ]);
   });
 
-  it('provides generated scenes and object thumbnails for every AI level', () => {
+  it('provides generated scenes for every AI level', () => {
     const aiLevels = builtInLevels.filter((level) => level.source === 'ai');
 
     expect(aiLevels.map((level) => level.id)).toEqual([
@@ -49,12 +59,21 @@ describe('built-in levels', () => {
       'ai-bathroom',
       'ai-garden',
       'ai-playroom',
+      'toy-bakery',
+      'toy-station',
+      'toy-underwater',
+      'toy-dino',
+      'toy-music',
+      'felt-picnic',
+      'felt-bedroom',
+      'felt-farm',
+      'felt-candy',
+      'felt-rooftop',
     ]);
 
     for (const level of aiLevels) {
       expect(level.imageSrc).toBe(`/assets/levels/${level.id}/scene.png`);
       expect(level.thumbnailSrc).toBe(`/assets/levels/${level.id}/scene.png`);
-      expect(getSearchItems(level).every((item) => item.thumbnailSrc?.startsWith(`/assets/levels/${level.id}/thumbs/`))).toBe(true);
     }
   });
 

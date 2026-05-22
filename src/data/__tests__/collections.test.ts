@@ -29,6 +29,32 @@ describe('built-in collections', () => {
     ]);
   });
 
+  it('groups the toy-adventure levels in display order', () => {
+    const collection = findCollectionById('toy-adventure');
+
+    expect(collection).toBeDefined();
+    expect(collection?.levelIds).toEqual([
+      'toy-bakery',
+      'toy-station',
+      'toy-underwater',
+      'toy-dino',
+      'toy-music',
+    ]);
+  });
+
+  it('groups the felt-adventure levels in display order', () => {
+    const collection = findCollectionById('felt-adventure');
+
+    expect(collection).toBeDefined();
+    expect(collection?.levelIds).toEqual([
+      'felt-picnic',
+      'felt-bedroom',
+      'felt-farm',
+      'felt-candy',
+      'felt-rooftop',
+    ]);
+  });
+
   it('uses Ukrainian as the third language for every collection title', () => {
     for (const collection of builtInCollections) {
       expect(Object.keys(collection.title)).toEqual(['pt', 'en', 'uk']);
@@ -61,6 +87,8 @@ describe('built-in collections', () => {
   it('finds the collection a level belongs to', () => {
     expect(findCollectionForLevel('ai-garden')?.id).toBe('sunny-house');
     expect(findCollectionForLevel('paper-space')?.id).toBe('paper-adventure');
+    expect(findCollectionForLevel('toy-underwater')?.id).toBe('toy-adventure');
+    expect(findCollectionForLevel('felt-farm')?.id).toBe('felt-adventure');
     expect(findCollectionForLevel('does-not-exist')).toBeUndefined();
   });
 });
