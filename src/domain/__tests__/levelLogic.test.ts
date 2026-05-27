@@ -62,6 +62,31 @@ describe('level logic', () => {
     expect(findItemAtPoint(sampleLevel, 90, 90)).toBeUndefined();
   });
 
+  it('prefers the smallest (most specific) area when targets overlap', () => {
+    const overlappingLevel: Level = {
+      ...sampleLevel,
+      items: [
+        {
+          id: 'big',
+          role: 'search-target',
+          label: { pt: 'grande', en: 'big', uk: 'велике' },
+          showLabelOnImage: false,
+          targetArea: { x: 0, y: 0, width: 50, height: 50 },
+        },
+        {
+          id: 'small',
+          role: 'learning-only',
+          label: { pt: 'pequeno', en: 'small', uk: 'мале' },
+          showLabelOnImage: false,
+          targetArea: { x: 10, y: 10, width: 10, height: 10 },
+        },
+      ],
+    };
+
+    expect(findItemAtPoint(overlappingLevel, 15, 15)?.id).toBe('small');
+    expect(findItemAtPoint(overlappingLevel, 30, 30)?.id).toBe('big');
+  });
+
   it('uses local audio when present and reports fallback when it is missing', () => {
     expect(getAudioSource(sampleLevel.items[0], 'pt')).toEqual({
       kind: 'file',

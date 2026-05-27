@@ -72,7 +72,21 @@ export function isLevelComplete(level: Level, progress: FoundProgress): boolean 
 }
 
 export function findItemAtPoint(level: Level, x: number, y: number): SceneItem | undefined {
-  return level.items.find((item) => isPointInsideArea(item.targetArea, x, y));
+  let bestItem: SceneItem | undefined;
+  let bestArea = Number.POSITIVE_INFINITY;
+
+  for (const item of level.items) {
+    if (!isPointInsideArea(item.targetArea, x, y)) {
+      continue;
+    }
+    const area = item.targetArea.width * item.targetArea.height;
+    if (area < bestArea) {
+      bestItem = item;
+      bestArea = area;
+    }
+  }
+
+  return bestItem;
 }
 
 export function isPointInsideArea(area: TargetArea, x: number, y: number): boolean {

@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import { resolveAssetPath } from '../domain/assets';
 import type { LanguageCode, Level, SceneItem } from '../domain/levelLogic';
-import { getLabel } from '../domain/levelLogic';
+import { findItemAtPoint, getLabel } from '../domain/levelLogic';
 
-defineProps<{
+const props = defineProps<{
   level: Level;
   language: LanguageCode;
   lastTouchedItem?: SceneItem;
@@ -17,14 +17,11 @@ const emit = defineEmits<{
 }>();
 
 function handlePointer(event: PointerEvent): void {
-  const image = event.currentTarget as HTMLElement;
-  const rect = image.getBoundingClientRect();
+  const stage = event.currentTarget as HTMLElement;
+  const rect = stage.getBoundingClientRect();
   const x = ((event.clientX - rect.left) / rect.width) * 100;
   const y = ((event.clientY - rect.top) / rect.height) * 100;
-  const item = (image as HTMLElement).__levelItems?.find((candidate) => {
-    const area = candidate.targetArea;
-    return x >= area.x && x <= area.x + area.width && y >= area.y && y <= area.y + area.height;
-  });
+  const item = findItemAtPoint(props.level, x, y);
 
   if (item) {
     emit('item', item);
@@ -35,19 +32,9 @@ function handlePointer(event: PointerEvent): void {
 }
 </script>
 
-<script lang="ts">
-import type { SceneItem as SceneCanvasItem } from '../domain/levelLogic';
-
-declare global {
-  interface HTMLElement {
-    __levelItems?: SceneCanvasItem[];
-  }
-}
-</script>
-
 <template>
   <div class="scene-frame">
-    <div class="scene-stage" :ref="(el) => { if (el) (el as HTMLElement).__levelItems = level.items; }" @pointerup="handlePointer">
+    <div class="scene-stage" @pointerup="handlePointer">
       <img class="scene-image" :src="resolveAssetPath(level.imageSrc)" :alt="getLabel(level.title, language)" draggable="false" />
       <div
         v-for="item in showDebugAreas ? level.items : []"
